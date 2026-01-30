@@ -15,6 +15,7 @@ const hanimation = document.querySelectorAll(".horor");
 const ranimation = document.querySelectorAll(".romantic");
 const sanimation = document.querySelectorAll(".spider");
 const canimation = document.querySelectorAll(".comedy");
+const saerchDiv = document.getElementById("saerchDiv");
 
 
 
@@ -135,21 +136,32 @@ cbtn.addEventListener("click",()=>{
 
 
 
-btn.addEventListener("click", () => {
-  boxes.forEach((box, index) => {
-    setTimeout(() => {
-      box.classList.remove("opacity-0", "translate-y-8");
-      box.classList.add("opacity-100", "translate-y-0");
-    }, index * 150); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
-  });
-});
-
 
 
 // input part
 
 searchbtn.addEventListener("click", () => {
-             canimation.forEach((box, index) => {
+
+    const value = input.value.toLowerCase().trim();
+
+
+    // category ها visible
+    catagory.forEach(cat => {
+        cat.style.display = "flex";
+    });
+
+    // همه فیلم‌ها مخفی
+    movies.forEach(movie => {
+        movie.style.display = "none";
+    });
+
+    if (value === "") return;
+
+    movies.forEach(movie => {
+        const title = movie.querySelector("h1").innerText.toLowerCase();
+
+        if (title.includes(value)) {
+                         canimation.forEach((box, index) => {
     setTimeout(() => {
       box.classList.remove("opacity-0", "translate-y-8");
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
@@ -176,25 +188,6 @@ searchbtn.addEventListener("click", () => {
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
     }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
   });
-    const value = input.value.toLowerCase().trim();
-
-
-    // category ها visible
-    catagory.forEach(cat => {
-        cat.style.display = "flex";
-    });
-
-    // همه فیلم‌ها مخفی
-    movies.forEach(movie => {
-        movie.style.display = "none";
-    });
-
-    if (value === "") return;
-
-    movies.forEach(movie => {
-        const title = movie.querySelector("h1").innerText.toLowerCase();
-
-        if (title.includes(value)) {
             movie.style.display = "inline-block";
         }
     });

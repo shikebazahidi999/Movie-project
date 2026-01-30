@@ -136,6 +136,14 @@ cbtn.addEventListener("click",()=>{
 
 
 // input part
+
+if(input.value===""){
+  spiderdiv.classList.add("hidden");
+  horrordiv.classList.add("hidden");  
+  romantictiv.classList.add("hidden");  
+  comedydiv.classList.add("hidden");  
+
+}
 searchbtn.addEventListener("click", () => {
     const value = input.value.toLowerCase().trim();
     // category ها visible
@@ -152,8 +160,13 @@ searchbtn.addEventListener("click", () => {
 
     movies.forEach(movie => {
         const title = movie.querySelector("h1").innerText.toLowerCase();
+        saerchDiv.innerHTML = ""
 
         if (title.includes(value)) {
+saerchDiv.classList.remove("hidden");
+saerchDiv.classList.add("flex");
+saerchDiv.appendChild(movie);
+
 
 
      canimation.forEach((box, index) => {

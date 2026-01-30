@@ -10,10 +10,16 @@ const input = document.getElementById("input");
 const movies = document.querySelectorAll(".movie");
 const searchbtn = document.getElementById("searchbtn");
 const catagory = document.querySelectorAll(".catagory")
-const seactions = [horrordiv,romantictiv,spiderdiv,comedydiv]
+const seactions = [horrordiv,romantictiv,spiderdiv,comedydiv];
+const hanimation = document.querySelectorAll(".horor");
+const ranimation = document.querySelectorAll(".romantic");
+const sanimation = document.querySelectorAll(".spider");
+const canimation = document.querySelectorAll(".comedy");
+
+
 
 // horror button part
-      movies.forEach(box => {
+      hanimation.forEach(box => {
    
       box.classList.add("opacity-0", "translate-y-8");
 
@@ -31,7 +37,7 @@ hbtn.addEventListener("click",()=>{
         comedydiv.classList.add("hidden");
         input.value= "horror";
     }
-  movies.forEach((box, index) => {
+  hanimation.forEach((box, index) => {
     setTimeout(() => {
       box.classList.remove("opacity-0", "translate-y-8");
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
@@ -40,6 +46,11 @@ hbtn.addEventListener("click",()=>{
 });
 
 // romantic button part
+      ranimation.forEach(box => {
+   
+      box.classList.add("opacity-0", "translate-y-8");
+
+    });
 rbtn.addEventListener("click",()=>{
     if(romantictiv.classList.contains("hidden")){
          horrordiv.classList.remove("flex");
@@ -52,7 +63,7 @@ rbtn.addEventListener("click",()=>{
         comedydiv.classList.add("hidden");
         input.value = "Romantic";
     }
-     movies.forEach((box, index) => {
+     ranimation.forEach((box, index) => {
     setTimeout(() => {
       box.classList.remove("opacity-0", "translate-y-8");
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
@@ -61,6 +72,11 @@ rbtn.addEventListener("click",()=>{
 });
 
 // spider button par
+      sanimation.forEach(box => {
+   
+      box.classList.add("opacity-0", "translate-y-8");
+
+    });
 sbtn.addEventListener("click",()=>{
     if(spiderdiv.classList.contains("hidden")){
 
@@ -78,7 +94,7 @@ sbtn.addEventListener("click",()=>{
 
         input.value = "spider-man";
     }
-     movies.forEach((box, index) => {
+     sanimation.forEach((box, index) => {
     setTimeout(() => {
       box.classList.remove("opacity-0", "translate-y-8");
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
@@ -87,6 +103,11 @@ sbtn.addEventListener("click",()=>{
 });
 
 // comedy button part
+      canimation.forEach(box => {
+   
+      box.classList.add("opacity-0", "translate-y-8");
+
+    });
 cbtn.addEventListener("click",()=>{
     if(comedydiv.classList.contains("hidden")){
 
@@ -104,6 +125,12 @@ cbtn.addEventListener("click",()=>{
 
         input.value = "comedy";
     }
+         canimation.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.remove("opacity-0", "translate-y-8");
+      box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
+    }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
+  });
 });
 
 
@@ -122,7 +149,35 @@ btn.addEventListener("click", () => {
 // input part
 
 searchbtn.addEventListener("click", () => {
+             canimation.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.remove("opacity-0", "translate-y-8");
+      box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
+    }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
+  });
+
+       sanimation.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.remove("opacity-0", "translate-y-8");
+      box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
+    }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
+  });
+
+       ranimation.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.remove("opacity-0", "translate-y-8");
+      box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
+    }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
+  });
+
+       ranimation.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.remove("opacity-0", "translate-y-8");
+      box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
+    }, index * 500); // هر دیو با 150 میلی‌ثانیه فاصله ظاهر می‌شود
+  });
     const value = input.value.toLowerCase().trim();
+
 
     // category ها visible
     catagory.forEach(cat => {

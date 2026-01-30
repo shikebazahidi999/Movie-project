@@ -135,16 +135,9 @@ cbtn.addEventListener("click",()=>{
 });
 
 
-
-
-
 // input part
-
 searchbtn.addEventListener("click", () => {
-
     const value = input.value.toLowerCase().trim();
-
-
     // category ها visible
     catagory.forEach(cat => {
         cat.style.display = "flex";
@@ -161,7 +154,9 @@ searchbtn.addEventListener("click", () => {
         const title = movie.querySelector("h1").innerText.toLowerCase();
 
         if (title.includes(value)) {
-                         canimation.forEach((box, index) => {
+
+
+     canimation.forEach((box, index) => {
     setTimeout(() => {
       box.classList.remove("opacity-0", "translate-y-8");
       box.classList.add("opacity-100", "translate-y-0","transition-All","duration-500");
